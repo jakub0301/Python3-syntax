@@ -62,4 +62,54 @@ print(len(dictionary))
 print(dictionary)
 print(dictionary.values())
 
+age = 21
+
+if age == 18 :
+    print("You are old enough to drive")
+else :
+    print("You are not old enough to drive")
+
+height = 150
+if height > 180 :
+    print("You are tall ")
+elif ((height > 170) and not(age > 18)):
+    print("You are young and tall")
+else :
+    print("You are medium height")
+
+
+for x in range(0,10):
+    print(x, ' ',end='')
+
+print()#new line
+
+for x in list:
+    print(x)
+
+num_list = [[1,2,3],[10,20,30],[100,200,300]]
+
+for x in num_list:
+    print(x)
+
+for x in range(0,3):
+    for y in range(0,3):
+        print(num_list[x][y])
+
+
+random_num = random.randrange(0,20)
+while(random_num !=0):
+    print(random_num)
+    random_num = random.randrange(0,20)
+
+i = 0
+
+while(i <= 20):
+    if(i%2 == 0):
+        print(i)
+    elif(i == 9):
+        break
+    else:
+        i+=1
+        continue
+    i+=1
 
