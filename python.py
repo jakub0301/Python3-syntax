@@ -113,3 +113,49 @@ while(i <= 20):
         continue
     i+=1
 
+def addNumber(fNum,lNum):
+    sumNum = fNum + lNum
+    return sumNum
+
+
+print((addNumber(1,2)))
+
+print("What is your name?")
+
+name = sys.stdin.readline()
+
+print("Hello", name)
+
+long_string = "I'll catch you if you fall - The Floor"
+
+print(long_string[0:4])
+print(long_string[-6:])
+print(long_string[:-6])
+
+print(long_string[:4] + " be there")
+
+
+print("%c is my %s letter and my %d number is %.5f" %('X', 'favourite', 1, 0.40))
+
+
+print(long_string.capitalize())
+print(long_string.find("Floor"))
+print(long_string.isalpha())
+print(long_string.isalnum())
+print(len(long_string))
+print(long_string.replace("Floor", "Ground"))
+print(long_string.strip())
+quote_list = long_string.split(" ")
+print(quote_list)
+
+file = open("text.txt", "wb")
+print(file.mode)
+print(file.name)
+file.write(bytes("Write to file\n",'UTF-8'))
+file.close()
+file = open("text.in","r+")
+text_in_file = file.read()
+print(text_in_file)
+
+os.remove("text.in")
+
