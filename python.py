@@ -159,3 +159,77 @@ print(text_in_file)
 
 os.remove("text.in")
 
+#Objects
+
+class Animal:
+    #Local variables
+    __name = None
+    __height = None
+    __weight = None
+    __sound = None
+    
+    def __init__(self, name, height, weight, sound):
+        self.__name = name
+        self.__height = height
+        self.__weight = weight
+        self.__sound = sound
+    
+    def set_name(self, name):
+        self.__name = name
+    
+    def set_height(self, height):
+        self.__height = height
+    
+    def set_weight(self, height):
+        self.__height = height
+    
+    def set_sound(self, sound):
+        self.__sound = sound
+    
+    def get_name(self):
+        return self.__name
+    
+    def get_height(self):
+        return str(self.__height)
+    
+    def get_weight(self):
+        return str(self.__weight)
+    
+    def get_sound(self):
+        return self.__sound
+    
+    def get_type(self):
+        print("Animal")
+    
+    def toString(self):
+        return "{} is {} cm tall and {} kilograms and say {}".format(self.__name, self.__height, self.__weight, self.__sound)
+
+
+
+cat = Animal('Whiskers', 33, 10, 'Meow')
+print(cat.toString())
+
+
+class Dog(Animal):
+    __owner = None
+    def __init__(self, name, height, weight, sound, owner):
+        self.__owner = owner
+        super(Dog, self).__init__(name, height, weight, sound)
+    
+    def set_owner(self, owner):
+        self.__owner = owner
+    
+    def get_owner(self):
+        return self.__owner
+    
+    def get_type(self):
+        print ("Dog")
+    
+    def toString(self):
+        return "{} is {} cm tall and {} kilograms and say {} His owner is {}".format(self.get_name(), self.get_height(), self.get_weight(), self.get_sound(), self.__owner)
+
+
+
+
+spot = Dog("Spot", 52, 27, "Ruff", "Bob")
+print(spot.toString())
