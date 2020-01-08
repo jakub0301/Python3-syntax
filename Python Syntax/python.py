@@ -233,3 +233,126 @@ class Dog(Animal):
 
 spot = Dog("Spot", 52, 27, "Ruff", "Bob")
 print(spot.toString())
+
+
+
+"yahoo!" if 3 > 2 else 2  # => "yahoo!"
+li = []
+li.append(1)
+li.append(2)
+li.append(4)
+li.append(3)
+li.pop()        # => 3 and li is now [1, 2, 4]
+li.append(3)    # li is now [1, 2, 4, 3] again.
+# Access a list like you would any array
+li[0]   # => 1
+# Look at the last element
+li[-1]  # => 3
+# Looking out of bounds is an IndexError
+li[4]  # Raises an IndexError
+
+li[1:3]   # Return list from index 1 to 3 => [2, 4]
+li[2:]    # Return list starting from index 2 => [4, 3]
+li[:3]    # Return list from beginning until index 3  => [1, 2, 4]
+li[::2]   # Return list selecting every second entry => [1, 4]
+li[::-1]  # Return list in reverse order => [3, 4, 2, 1]
+
+del li[2]  # li is now [1, 2, 3]
+
+# Check for existence in a list with "in"
+1 in li  # => True
+
+
+
+# Dictionaries store mappings from keys to values
+empty_dict = {}
+# Here is a prefilled dictionary
+filled_dict = {"one": 1, "two": 2, "three": 3}
+
+filled_dict["one"]  # => 1
+list(filled_dict.keys())  # => ["one", "two", "three"]
+list(filled_dict.values())  # => [1, 2, 3]
+
+"one" in filled_dict  # => True
+1 in filled_dict      # => False
+
+filled_dict["four"]  # KeyError
+
+# Use "get()" method to avoid the KeyError
+filled_dict.get("one")      # => 1
+filled_dict.get("four")     # => None
+# The get method supports a default argument when the value is missing
+filled_dict.get("one", 4)   # => 1
+filled_dict.get("four", 4)  # => 4
+
+# "setdefault()" inserts into a dictionary only if the given key isn't present
+filled_dict.setdefault("five", 5)  # filled_dict["five"] is set to 5
+filled_dict.setdefault("five", 6)  # filled_dict["five"] is still 5
+
+# Adding to a dictionary
+filled_dict.update({"four":4})  # => {"one": 1, "two": 2, "three": 3, "four": 4}
+filled_dict["four"] = 4         # another way to add to dict
+
+# Remove keys from a dictionary with del
+del filled_dict["one"]  # Removes the key "one" from filled dict
+
+
+
+list = ["dog", "cat", "mouse"]
+for i, value in enumerate(list):
+    print(i, value)
+#  =>
+#0 dog
+#1 cat
+#2 mouse
+
+
+# Handle exceptions with a try/except block
+try:
+    # Use "raise" to raise an error
+    raise IndexError("This is an index error")
+except IndexError as e:
+    pass                 # Pass is just a no-op. Usually you would do recovery here.
+except (TypeError, NameError):
+    pass                 # Multiple exceptions can be handled together, if required.
+else:                    # Optional clause to the try/except block. Must follow all except blocks
+    print("All good!")   # Runs only if the code in try raises no exceptions
+finally:                 #  Execute under all circumstances
+    print("We can clean up resources here")
+
+
+
+# Instead of try/finally to cleanup resources you can use a with statement
+with open("myfile.txt") as f:
+    for line in f:
+        print(line)
+
+
+
+
+# You can define functions that take a variable number of
+# positional arguments
+def varargs(*args):
+    return args
+
+varargs(1, 2, 3)  # => (1, 2, 3)
+
+# You can define functions that take a variable number of
+# keyword arguments, as well
+def keyword_args(**kwargs):
+    return kwargs
+
+# Let's call it to see what happens
+keyword_args(big="foot", loch="ness")  # => {"big": "foot", "loch": "ness"}
+
+
+# You can do both at once, if you like
+def all_the_args(*args, **kwargs):
+    print(args)
+    print(kwargs)
+    
+"""
+all_the_args(1, 2, a=3, b=4) prints:
+    (1, 2)
+    {"a": 3, "b": 4}
+"""
