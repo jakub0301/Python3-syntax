@@ -519,3 +519,29 @@ if __name__ == '__main__':
     # i.age                         # => this would raise an AttributeError
 
 
+
+# you can use 1_000_000 instead 1000000
+
+num = 1_000_000
+
+a, b, *c = (1, 2, 3, 4, 5)
+
+print(a)
+print(b)
+print(c)
+
+username = input('Username: ')
+password = input('Password: ') # wrong
+
+from getpass import getpass
+
+password = getpass('Password: ') # good
+
+
+
+
+
+
+
+
+
